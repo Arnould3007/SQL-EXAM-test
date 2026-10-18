@@ -48,52 +48,52 @@ For **each** question, paste in `answers.sql`:
 - your final query;
 - the answer, as a comment: the number of rows and the key values (or the first rows if the result is long).
 
-### Q1 — Filtering and sorting
+### Q1 — 
 List the tracks released in **2025 or later** that last **less than 4 minutes**.
 Return `title`, `release_year`, `duration_sec`, from the shortest to the longest.
 
-### Q2 — Aggregation
+### Q2 — 
 Return the users who have **at least 3 plays**.
 Return `user_id`, `nb_plays`, sorted by `nb_plays` descending.
 
-### Q3 — Join and NULL handling
+### Q3 — 
 Total listening time (`seconds_listened`) **per country**.
 Users without a country must appear under the label `'Unknown'`.
 Return `country`, `total_seconds`, sorted by `total_seconds` descending.
 
-### Q4 — Keeping every row
+### Q4 — 
 Return **every playlist** with its number of tracks, **including empty playlists**.
 Return `playlist_name`, `nb_tracks`.
 
-### Q5 — Business categories
+### Q5 —
 Classify each play as `'full'` if the user listened to the whole track
 (`seconds_listened = duration_sec`), otherwise `'partial'`.
 Then return the number of plays in each category: `listen_type`, `nb_plays`.
 
-### Q6 — Subquery
+### Q6 — 
 Return the tracks that have **never been added to any playlist**.
 Return `track_id`, `title`. Use a subquery.
 
-### Q7 — Multi-step analysis (CTE)
+### Q7 —
 Return the users whose **total listening time** is above the **average total listening time of all users**.
 Users who never listened count as **0**.
 Return `user_id`, `username`, `total_seconds`, sorted descending.
 Use named CTEs.
 
-### Q8 — Top per group
+### Q8 — 
 For each user, return their **longest single play** (highest `seconds_listened`).
 Return `user_id`, `play_id`, `played_at`, `seconds_listened`.
 
-### Q9 — Month-over-month
+### Q9 — 
 For each month: total `seconds_listened`, the previous month's total, and the
 month-over-month change in % (rounded to 2 decimals).
 Return `month`, `total_seconds`, `previous_month_seconds`, `mom_pct`.
 
-### Q10 — Ranking
+### Q10 — 
 Rank the **genres** by total listening time (1 = highest), using `DENSE_RANK`.
 Return `genre`, `total_seconds`, `genre_rank`.
 
-### Q11 — Code review
+### Q11 — 
 A colleague wrote this query to show **every user with their number of plays,
 including users who never listened**. It returns a wrong result.
 
